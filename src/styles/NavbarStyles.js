@@ -1,7 +1,16 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CiMenuBurger } from "react-icons/ci";
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export const NavbarWrapper = styled.div`
   width: 100%;
@@ -59,7 +68,7 @@ export const LinksContainer = styled.div`
     top: 81px;
   }
 
-  @media screen and (min-width:769px) and (max-width: 1080px) {
+  @media screen and (min-width:769px) and (max-width: 1079px) {
     padding-top: 0.5rem;
   }
   
@@ -117,10 +126,10 @@ export const NavLinks = styled.ul`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 20px;
+  gap: 1.25rem;
   width: 100%;
   box-shadow: none;
-  padding: 0px;
+  padding: 0;
   margin: 0;
 
   @media screen and (max-width: 768px) {
@@ -186,11 +195,16 @@ export const StyledLink = styled(Link)`
     &:hover::before {
       width: 100%;
     }
+
+    &:hover {
+      color: #000;
+  
+      .vinyl-record {
+        animation: ${spin} 1.25s linear infinite;
+      }
+    }
   }
 
-  &:hover {
-    color: #000;
-  }
 
   @media screen and (min-width: 1080px) {
     font-size: 3rem;

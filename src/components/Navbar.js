@@ -85,7 +85,7 @@ export default function Navbar() {
             >
               <LinkWrapper>
                 <StyledLink to="/">
-                  {isMobile ? "Home" : <VinylRecord /> }
+                  {isMobile ? "Home" : <VinylRecord className="vinyl-record"/> }
                 </StyledLink>
               </LinkWrapper>
               <LinkWrapper>
