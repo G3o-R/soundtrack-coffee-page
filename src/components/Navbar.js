@@ -1,6 +1,7 @@
 import {
   NavbarContainer,
   NavbarWrapper,
+  StyledSection,
   LinksContainer,
   MotionNav,
   MenuWrapper,
@@ -8,8 +9,10 @@ import {
   NavLinks,
   LinkWrapper,
   StyledLink,
+  StyledHeader,
+  HeaderContainer,
 } from "../styles/NavbarStyles";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { ReactComponent as VinylRecord } from "../images-svgs/record-vinyl.svg";
 
@@ -17,19 +20,61 @@ export default function Navbar() {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [effect, setEffect] = useState("--visible");
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const navRef = useRef(null);
+  console.log(isMobile)
+
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        isDropdownVisible &&
+        navRef.current &&
+        !navRef.current.contains(event.target)
+      ) {
+        setDropdownVisible(false);
+      }
+    };
+
+    let lastScrollY = window.scrollY;
+    window.addEventListener("scroll", () => {
+      if (lastScrollY > window.scrollY || window.scrollY < 100) {
+        setEffect("--visible");
+      }
+      if (lastScrollY > window.scrollY && window.scrollY < 400) {
+        setEffect("--transparent");
+      } else if (lastScrollY < window.scrollY && window.scrollY > 100) {
+        setEffect("--hidden");
+        setDropdownVisible(false);
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isDropdownVisible]);
+
   return (
-    <NavbarWrapper className="navbar-wrapper">
+    <NavbarWrapper ref={navRef} className="navbar-wrapper">
       <NavbarContainer className="navbar-container">
-        {/* <h1 style={{margin: 0}}>test</h1> */}
+        <StyledSection className="styled-section">
+          <HeaderContainer className="header-container">
+            <VinylRecord className="logo"/>
+            <StyledHeader className="styled-header">
+              Soundtrack Coffee
+            </StyledHeader>
+          </HeaderContainer>
+        </StyledSection>
         <LinksContainer className="links-container">
           <MotionNav
             className="motion-nav"
-            initial={{ height: 0 }}
+            initial={{ height: isMobile ? 0 : "100%" }}
+            // initial={{ height: 0}}
             animate={{ height: isDropdownVisible && isMobile ? "auto" : 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
@@ -40,7 +85,7 @@ export default function Navbar() {
             >
               <LinkWrapper>
                 <StyledLink to="/">
-                  <VinylRecord />
+                  {isMobile ? "Home" : <VinylRecord /> }
                 </StyledLink>
               </LinkWrapper>
               <LinkWrapper>

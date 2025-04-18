@@ -41,3 +41,8 @@
   font-family: 'BioRhyme';
   src: url("../../public/BioRhyme-Light.ttf");
 }
+
+@font-face {
+  font-family: 'SpecialElite';
+  src: url("../../public/SpecialElite-Regular.ttf");
+}

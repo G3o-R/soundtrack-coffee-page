@@ -3,15 +3,48 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CiMenuBurger } from "react-icons/ci";
 
+export const NavbarWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 export const NavbarContainer = styled.div`
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   height: 5rem;
 `;
 
-export const NavbarWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+export const StyledSection = styled.section`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const HeaderContainer = styled.div`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .logo{
+        height: 2rem;
+    }
+`;
+
+export const StyledHeader = styled.h1`
+    font-family: SpecialElite;
+    font-size: 2rem;
+    margin: auto 0 1.25rem;
+    line-height: 2rem;
+
+
 `;
 
 export const LinksContainer = styled.div`
@@ -20,11 +53,16 @@ export const LinksContainer = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-
+  
   @media screen and (max-width: 768px) {
     position: absolute;
     top: 81px;
   }
+
+  @media screen and (min-width:769px) and (max-width: 1080px) {
+    padding-top: 0.5rem;
+  }
+  
 `;
 
 export const MotionNav = styled(motion.nav)`
@@ -82,7 +120,7 @@ export const NavLinks = styled.ul`
   gap: 20px;
   width: 100%;
   box-shadow: none;
-  padding: 10px 0px;
+  padding: 0px;
   margin: 0;
 
   @media screen and (max-width: 768px) {
@@ -95,7 +133,6 @@ export const NavLinks = styled.ul`
     gap: 0px;
 
     &.mobile {
-      /* background-color: #090909; */
       overflow: hidden;
       width: 100%;
     }
@@ -127,6 +164,7 @@ export const StyledLink = styled(Link)`
   border: none;
   cursor: pointer;
   line-height: auto;
+  font-size: 2.25rem;
   font-family: BioRhyme;
 
   svg {
@@ -136,11 +174,11 @@ export const StyledLink = styled(Link)`
   &::before {
     content: "";
     position: absolute;
-    bottom: 0px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    height: 3px;
+    height: 2px;
     background-color: currentColor;
     transition: width 0.3s ease;
   }
@@ -154,16 +192,7 @@ export const StyledLink = styled(Link)`
     color: #000;
   }
 
-  @media screen and (max-width: 768px) {
-    font-size: 1.5rem;
-    line-height: 3em;
-  }
-
-  @media screen and (max-width: 1560px) {
+  @media screen and (min-width: 1080px) {
     font-size: 3rem;
-  }
-
-  @media screen and (max-width: 1260px) {
-    font-size: 2.5rem;
   }
 `;
