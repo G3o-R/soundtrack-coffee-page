@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { CiMenuBurger } from "react-icons/ci";
 
 export const NavbarContainer = styled.div`
   background-color: #fff;
@@ -8,17 +10,114 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavbarWrapper = styled.div`
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
 `;
 
 export const LinksContainer = styled.div`
+  position: static;
+  top: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    top: 81px;
+  }
+`;
+
+export const MotionNav = styled(motion.nav)`
+  overflow: "visible";
+  width: auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    overflow: hidden;
+  }
+`;
+
+export const MenuWrapper = styled.div`
+  width: 100%;
+  display: none;
+  justify-content: center;
+  background-color: #cfcfcf;
+  border-radius: 0 0 1.5rem 1.5rem;
+  height: 1.5rem;
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const MenuDrop = styled(CiMenuBurger)`
+  height: 80%;
+  color: #000000;
+  font-size: 2rem;
+  cursor: pointer;
+  stroke-width: 1;
+  transition: stroke-width 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    color: #fff;
+    stroke-width: 2;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    padding: 10px;
+    align-self: center;
+  }
+`;
+
+export const NavLinks = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  gap: 1.25rem;
-  `;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  box-shadow: none;
+  padding: 10px 0px;
+  margin: 0;
+
+  @media screen and (max-width: 768px) {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0px;
+
+    &.mobile {
+      /* background-color: #090909; */
+      overflow: hidden;
+      width: 100%;
+    }
+
+    &.mobile.active {
+      visibility: visible;
+    }
+  }
+`;
+
+export const LinkWrapper = styled.div`
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    max-height: 5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(217, 128, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+`;
 
 export const StyledLink = styled(Link)`
   color: #101010;
@@ -30,7 +129,7 @@ export const StyledLink = styled(Link)`
   line-height: auto;
   font-family: BioRhyme;
 
-  svg{
+  svg {
     margin-bottom: -0.5rem;
   }
 
@@ -45,9 +144,10 @@ export const StyledLink = styled(Link)`
     background-color: currentColor;
     transition: width 0.3s ease;
   }
-
-  &:hover::before {
-    width: 100%;
+  @media screen and (min-width: 768px) {
+    &:hover::before {
+      width: 100%;
+    }
   }
 
   &:hover {
