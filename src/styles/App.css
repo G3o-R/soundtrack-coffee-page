@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'BioRhyme';
+  src: url("../../public/BioRhyme-Light.ttf");
+}
