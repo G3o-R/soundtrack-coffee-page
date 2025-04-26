@@ -21,8 +21,6 @@ export default function Navbar() {
   const [effect, setEffect] = useState("--visible");
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const navRef = useRef(null);
-  console.log(isMobile)
-
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);

@@ -15,12 +15,20 @@ const spin = keyframes`
 export const NavbarWrapper = styled.div`
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  max-height: 5rem;
 `;
 
 export const NavbarContainer = styled.div`
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   height: 5rem;
+  @media screen and (max-width: 768px) {
+    height: 4rem;
+  }
 `;
 
 export const StyledSection = styled.section`
@@ -49,9 +57,13 @@ export const HeaderContainer = styled.div`
 
 export const StyledHeader = styled.h1`
     font-family: SpecialElite;
-    font-size: 2rem;
-    margin: auto 0 1.25rem;
+    margin: auto 0 .75rem;
     line-height: 2rem;
+    font-size: 1.75rem;
+    
+    @media screen and (min-width: 420px) {
+      font-size: 2rem;
+    }
 
 
 `;
@@ -65,7 +77,7 @@ export const LinksContainer = styled.div`
   
   @media screen and (max-width: 768px) {
     position: absolute;
-    top: 81px;
+    /* top: 81px; */
   }
 
   @media screen and (min-width:769px) and (max-width: 1079px) {

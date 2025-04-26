@@ -1,10 +1,10 @@
-
+import HeroSection from "../components/HeroSection";
+import { StyledHomePage } from "../styles/HomeStyles";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-      <p>This is the home page.</p>
-    </div>
+    <StyledHomePage className="home-page">
+      <HeroSection />
+    </StyledHomePage>
   );
 }
