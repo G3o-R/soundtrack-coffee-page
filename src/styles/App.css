@@ -66,8 +66,8 @@ h1{
 
 button{
   font-family: 'BioRhyme', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   @media screen and (min-width: 960px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }

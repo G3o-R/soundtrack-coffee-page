@@ -115,7 +115,7 @@ export const BookingBtn = styled.button`
   max-width: 20rem;
   padding: 0rem 1.75rem;
   background: #fbe8cd;
-  border: 5px solid #d98000;
-  border-radius: 97px;
+  border: 2.5px solid #d98000;
+  border-radius: 9999px;
   cursor: pointer;
 `;
