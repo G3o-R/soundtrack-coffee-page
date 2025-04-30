@@ -186,7 +186,7 @@ export const StyledLink = styled(Link)`
   cursor: pointer;
   line-height: auto;
   font-size: 2.25rem;
-  font-family: BioRhyme;
+  font-family: BioRhymeLight;
 
   svg {
     margin-bottom: -0.5rem;

@@ -38,8 +38,13 @@
 }
 
 @font-face {
-  font-family: 'BioRhyme';
+  font-family: 'BioRhymeLight';
   src: url("../../public/BioRhyme-Light.ttf");
+}
+
+@font-face {
+  font-family: 'BioRhymeReg';
+  src: url("../../public/BioRhyme-Regular.ttf");
 }
 
 @font-face {
@@ -52,11 +57,11 @@ h1{
   font-size: 3rem;
 
   @media screen and (min-width: 425px) {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   @media screen and (min-width: 960px) {
@@ -64,8 +69,23 @@ h1{
   }
 }
 
+p{
+ font-family: BioRhymeReg;
+ font-size: 1rem;
+
+ @media screen and (min-width: 768px) {
+  font-size: 1.25rem;
+}
+
+ @media screen and (min-width: 1080px) {
+  font-size: 1.5rem;
+}
+}
+
+
+
 button, h2{
-  font-family: 'BioRhyme', sans-serif;
+  font-family: 'BioRhymeLight', sans-serif;
   font-size: 1.5rem;
   @media screen and (min-width: 960px) {
     font-size: 2rem;

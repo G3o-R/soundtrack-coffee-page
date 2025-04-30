@@ -17,19 +17,19 @@ import {
           <FooterContainer className="footer-container">
                 <SocialMediaContainer className="social-media">
                   <SocialMediaIconAnchor
-                    href="https://www.facebook.com/profile.php?id=100009616453915"
+                    // href="https://www.facebook.com/profile.php?id=100009616453915"
                     target="_blank"
                   >
                     <FacebookIcon />
                   </SocialMediaIconAnchor>
                   <SocialMediaIconAnchor
-                    href="https://www.instagram.com/saldanas_garage/"
+                    // href="https://www.instagram.com/saldanas_garage/"
                     target="_blank"
                   >
                     <InstagramIcon />
                   </SocialMediaIconAnchor>
                   <SocialMediaIconAnchor
-                    href="https://www.tiktok.com/@saldana602?lang=en"
+                    // href="https://www.tiktok.com/@saldana602?lang=en"
                     target="_blank"
                   >
                     <TiktokIcon />
