@@ -14,13 +14,13 @@ import EventsImg from "../images-svgs/events-image.jpg";
 
 export default function ServicesSection() {
   return (
-    <ServicesSectionStyled>
-      <ServicesWrapper>
-        <ServicesContainer>
-          <ServiceCardWrapper>
-            <ServiceCardContainer>
-              <ImageWrapper>
-                <ImageContainer>
+    <ServicesSectionStyled className="services-section">
+      <ServicesWrapper className="services-wrapper">
+        <ServicesContainer className="services-container">
+          <ServiceCardWrapper className="service-card-wrapper">
+            <ServiceCardContainer className="service-card-container">
+              <ImageWrapper className="image-wrapper">
+                <ImageContainer className="image-container">
                   <img src={ClassesImg} alt="Classes" />
                 </ImageContainer>
               </ImageWrapper>
@@ -29,10 +29,10 @@ export default function ServicesSection() {
               </ServiceHeaderContainer>
             </ServiceCardContainer>
           </ServiceCardWrapper>
-          <ServiceCardWrapper>
-            <ServiceCardContainer>
-              <ImageWrapper>
-                <ImageContainer>
+          <ServiceCardWrapper className="service-card-wrapper">
+            <ServiceCardContainer className="service-card-container">
+              <ImageWrapper className="image-wrapper">
+                <ImageContainer className="image-container">
                   <img src={CateringImg} alt="Catering" />
                 </ImageContainer>
               </ImageWrapper>
@@ -41,10 +41,10 @@ export default function ServicesSection() {
               </ServiceHeaderContainer>
             </ServiceCardContainer>
           </ServiceCardWrapper>
-          <ServiceCardWrapper>
-            <ServiceCardContainer>
-              <ImageWrapper>
-                <ImageContainer>
+          <ServiceCardWrapper className="service-card-wrapper">
+            <ServiceCardContainer className="service-card-container">
+              <ImageWrapper className="image-wrapper">
+                <ImageContainer className="image-container">
                   <img src={EventsImg} alt="Events" />
                 </ImageContainer>
               </ImageWrapper>

@@ -6,14 +6,19 @@ export const StyledHeroSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  `;
 
 export const HeroWrapper = styled.div`
-  max-width: 78.75rem;
+  max-width: 81.25rem;
   width: auto;
   height: 23.5rem;
   display: flex;
   align-items: center;
+  @media screen and (min-width: 769px){
+    width: 100%;
+  }
 `;
 
 export const HeroContainer = styled.div`
@@ -22,6 +27,7 @@ export const HeroContainer = styled.div`
   flex-direction: column;
   text-align: right;
   padding: 0 .5rem;
+  width: auto;
   @media screen and (max-width: 768px) {
     position: relative;
     padding: 0;
@@ -46,7 +52,6 @@ export const HeroContainer = styled.div`
 export const MobileContainer = styled.div`
   height: 100%;
   width: 100%;
-  /* max-width: 32.5rem; */
   overflow: visible;
   margin-left: -3rem;
 `;

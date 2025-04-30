@@ -8,7 +8,6 @@ import {
   TextContainer,
   BookingBtnWrapper,
   BookingBtn,
-  MobileContainer,
 } from "../styles/HeroSectionStyles";
 import { useMediaQuery } from "react-responsive";
 
