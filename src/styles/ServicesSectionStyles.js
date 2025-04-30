@@ -72,9 +72,12 @@ export const ServiceHeaderContainer = styled.div`
   text-align: left;
   h2 {
     border-bottom: 1px solid #d98000;
-    font-size: 1.5rem;
-    font-weight: 600;
+    /* font-size: 1.5rem; */
+    font-weight: 500;
     padding: 0 0 0.75rem;
     color: #171717;
+    margin:0;
+    padding: 0;
+
   }
 `;

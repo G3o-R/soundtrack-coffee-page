@@ -2,22 +2,31 @@ import styled from "styled-components";
 
 export const StyledHeroSection = styled.section`
   background-color: #ffffff;
-  height: 31.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  
+  @media screen and (min-width: 960px){
+    height: 28.25rem;
+
+  }
   `;
 
 export const HeroWrapper = styled.div`
   max-width: 81.25rem;
   width: auto;
-  height: 23.5rem;
   display: flex;
   align-items: center;
+  height: 23.5rem;
   @media screen and (min-width: 769px){
     width: 100%;
+  }
+
+  @media screen and (max-width: 960px){
+    margin: 1rem 0;
+
   }
 `;
 
