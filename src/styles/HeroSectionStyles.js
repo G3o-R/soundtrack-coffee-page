@@ -12,6 +12,7 @@ export const StyledHeroSection = styled.section`
     height: 28.25rem;
 
   }
+  
   `;
 
 export const HeroWrapper = styled.div`

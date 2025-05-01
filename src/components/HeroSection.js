@@ -22,7 +22,6 @@ export default function HeroSection() {
       <HeroWrapper className="hero-wrapper">
         <HeroContainer className="hero-container">
           {isMobile ? (
-            // <MobileContainer className="mobile-container">
             <>
               <LogoWrapper className="logo-wrapper">
                 <LogoContainer className="logo-container">
