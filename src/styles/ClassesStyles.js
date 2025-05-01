@@ -67,6 +67,7 @@ export const TextContainer = styled(motion.div)`
   height: 100%;
   &.mobile {
     overflow: hidden;
+    border-bottom: 1px solid rgba(217, 128, 0);
 
     p {
       display: -webkit-box;
@@ -85,10 +86,16 @@ export const TextContainer = styled(motion.div)`
 `;
 
 export const BookingBtnWrapper = styled.div`
-  padding-top: 5rem;
+  padding-top: 2.5rem;
+  @media screen and (min-width: 480px) {
+    padding-top: 5rem;
+  }
+
+
 `;
 
 export const BookingBtn = styled.button`
+  font-size: 2rem;
   box-sizing: border-box;
   max-width: 20rem;
   padding: 0rem 1.75rem;

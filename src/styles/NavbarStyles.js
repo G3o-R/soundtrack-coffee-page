@@ -77,7 +77,6 @@ export const LinksContainer = styled.div`
   
   @media screen and (max-width: 768px) {
     position: absolute;
-    /* top: 81px; */
   }
 
   @media screen and (min-width:769px) and (max-width: 1079px) {

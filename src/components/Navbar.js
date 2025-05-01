@@ -82,21 +82,21 @@ export default function Navbar() {
               }`}
             >
               <LinkWrapper>
-                <StyledLink to="/">
+                <StyledLink onClick={isMobile ? () => setDropdownVisible(false) : null} to="/" >
                   {isMobile ? "Home" : <VinylRecord className="vinyl-record"/> }
                 </StyledLink>
               </LinkWrapper>
               <LinkWrapper>
-                <StyledLink to="/classes">Classes</StyledLink>
+                <StyledLink onClick={isMobile ? () => setDropdownVisible(false) : null} to="/classes" >Classes</StyledLink>
               </LinkWrapper>
               <LinkWrapper>
-                <StyledLink to="/catering">Catering</StyledLink>
+                <StyledLink onClick={isMobile ? () => setDropdownVisible(false) : null} to="/catering">Catering</StyledLink>
               </LinkWrapper>
               <LinkWrapper>
-                <StyledLink to="/events">Events</StyledLink>
+                <StyledLink onClick={isMobile ? () => setDropdownVisible(false) : null} to="/events">Events</StyledLink>
               </LinkWrapper>
               <LinkWrapper>
-                <StyledLink to="/booking">Booking</StyledLink>
+                <StyledLink onClick={isMobile ? () => setDropdownVisible(false) : null} to="/booking">Booking</StyledLink>
               </LinkWrapper>
             </NavLinks>
           </MotionNav>

@@ -47,9 +47,9 @@ export default function Classes() {
                 <h1>Beginners Brewing</h1>
               </HeaderContainer>
               <TextContainer
-                className={`text-container motion ${
-                  !isntMobile ? "mobile" : ""
-                } ${expanded === "brew" ? "expanded" : ""}`}
+                className={`text-container motion ${!isntMobile ? "mobile" : ""} ${
+                  expanded === "brew" ? "expanded" : ""
+                }`}
                 initial={{ height: !isntMobile ? "4rem" : "100%" }}
                 animate={{
                   height:
@@ -60,7 +60,7 @@ export default function Classes() {
                       : "100%", // Or any desired collapsed height on desktop
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                onClick={() => (isntMobile ? null : setExpanded("brew"))}
+                onClick={() => isntMobile ? null : setExpanded("brew")}
               >
                 <p>
                   Brewing coffee is a delicate craft where every element works
@@ -86,9 +86,9 @@ export default function Classes() {
                 <h1>Latte Art</h1>
               </HeaderContainer>
               <TextContainer
-                className={`text-container motion ${
-                  !isntMobile ? "mobile" : ""
-                } ${expanded === "latte" ? "expanded" : ""}`}
+                className={`text-container motion ${!isntMobile ? "mobile" : ""} ${
+                  expanded === "latte" ? "expanded" : ""
+                }`}
                 initial={{ height: !isntMobile ? "4rem" : "100%" }}
                 animate={{
                   height:
@@ -99,7 +99,7 @@ export default function Classes() {
                       : "100%", // Or any desired collapsed height on desktop
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                onClick={() => (isntMobile ? null : setExpanded("latte"))}
+                onClick={() => isntMobile ? null : setExpanded("latte")}
               >
                 <p>
                   Latte art is a skill that enhances both the beauty and taste
