@@ -18,8 +18,8 @@ export const PageInfoWrapper = styled.div`
 
 export const PageInfoContainer = styled.div`
   max-width: 67.5rem;
-  text-align: center;
-  padding: 0 0.5rem;
+  text-align: left;
+  padding: 0 2.5rem;
 `;
 
 export const Titlecontainer = styled.div``;

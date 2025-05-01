@@ -58,7 +58,7 @@ export default function Navbar() {
   }, [isDropdownVisible]);
 
   return (
-    <NavbarWrapper ref={navRef} className="navbar-wrapper">
+    <NavbarWrapper ref={navRef} className={`navbar-wrapper ${isMobile ? "mobile" : "large-screen"}`}>
       <NavbarContainer className="navbar-container">
         <StyledSection className="styled-section">
           <HeaderContainer className="header-container">

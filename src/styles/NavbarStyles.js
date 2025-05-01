@@ -20,11 +20,28 @@ export const NavbarWrapper = styled.div`
   left: 0;
   z-index: 1000;
   max-height: 5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  &.large-screen {
+    display: flex;
+    justify-content: center;
+
+    
+    @media screen and (min-width: 769px) and (max-width: 1349px) {
+      justify-content: left;
+      padding-left: 2.5rem;
+    }
+    @media screen and (min-width: 1350px) {
+      .navbar-container {
+        margin-right: 11.5rem;
+      }
+    }
+  }
+
 `;
 
 export const NavbarContainer = styled.div`
   background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   height: 5rem;
   @media screen and (max-width: 768px) {
     height: 4rem;
@@ -161,6 +178,14 @@ export const NavLinks = styled.ul`
       visibility: visible;
     }
   }
+
+  @media screen and (min-width: 960px){
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 1260px){
+    gap: 4rem;
+  }
 `;
 
 export const LinkWrapper = styled.div`
@@ -216,6 +241,9 @@ export const StyledLink = styled(Link)`
     }
   }
 
+  @media screen and (min-width: 850px) {
+    font-size: 2.5rem;
+  }
 
   @media screen and (min-width: 1080px) {
     font-size: 3rem;
