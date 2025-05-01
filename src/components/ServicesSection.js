@@ -8,6 +8,7 @@ import {
   ImageContainer,
   ServiceHeaderContainer,
 } from "../styles/ServicesSectionStyles";
+import { ReactComponent as Arrow } from "../images-svgs/link-arrow.svg";
 import ClassesImg from "../images-svgs/classes-image.jpg";
 import CateringImg from "../images-svgs/catering-image.jpg";
 import EventsImg from "../images-svgs/events-image.jpg";
@@ -25,7 +26,7 @@ export default function ServicesSection() {
                 </ImageContainer>
               </ImageWrapper>
               <ServiceHeaderContainer>
-                <h2>Classes </h2>
+                <h2>Classes <Arrow /> </h2>
               </ServiceHeaderContainer>
             </ServiceCardContainer>
           </ServiceCardWrapper>
@@ -37,7 +38,7 @@ export default function ServicesSection() {
                 </ImageContainer>
               </ImageWrapper>
               <ServiceHeaderContainer>
-                <h2>Catering</h2>
+                <h2>Catering <Arrow /></h2>
               </ServiceHeaderContainer>
             </ServiceCardContainer>
           </ServiceCardWrapper>
@@ -49,7 +50,7 @@ export default function ServicesSection() {
                 </ImageContainer>
               </ImageWrapper>
               <ServiceHeaderContainer>
-                <h2>Events</h2>
+                <h2>Events <Arrow /></h2>
               </ServiceHeaderContainer>
             </ServiceCardContainer>
           </ServiceCardWrapper>
