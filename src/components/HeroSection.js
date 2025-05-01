@@ -42,7 +42,6 @@ export default function HeroSection() {
                 </BookingBtn>
               </BookingBtnWrapper>
                   </>
-            // </MobileContainer>
           ) : (
             <>
               <LogoWrapper className="logo-wrapper">
