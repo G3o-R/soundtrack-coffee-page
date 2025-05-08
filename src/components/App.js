@@ -6,8 +6,16 @@ import Catering from "../pages/Catering";
 import Events from "../pages/Events";
 import Booking from "../pages/Booking";
 import Navbar from "./Navbar";
+import { Context } from "../context/context";
+import React, { useContext } from "react";
+
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const {isLoading, spaceData} = useContext(Context)
+
+  console.log(isLoading)
+  console.log(spaceData)
   return (
     <div className="App">
       <BrowserRouter>
@@ -16,7 +24,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/catering" element={<Catering />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/events" element={<Events eventsArr={spaceData.events}/>} />
           <Route path="/booking" element={<Booking />} />
         </Routes>
       </BrowserRouter>

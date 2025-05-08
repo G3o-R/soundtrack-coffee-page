@@ -22,7 +22,7 @@ export default function ServicesSection() {
             <ServiceCardContainer className="service-card-container">
               <ImageWrapper className="image-wrapper">
                 <ImageContainer className="image-container">
-                  <img src={ClassesImg} alt="Classes" />
+                  <img src={ClassesImg} loading="lazy" alt="Classes" />
                 </ImageContainer>
               </ImageWrapper>
               <ServiceHeaderContainer>
@@ -34,7 +34,7 @@ export default function ServicesSection() {
             <ServiceCardContainer className="service-card-container">
               <ImageWrapper className="image-wrapper">
                 <ImageContainer className="image-container">
-                  <img src={CateringImg} alt="Catering" />
+                  <img src={CateringImg} loading="lazy" alt="Catering" />
                 </ImageContainer>
               </ImageWrapper>
               <ServiceHeaderContainer>
@@ -46,7 +46,7 @@ export default function ServicesSection() {
             <ServiceCardContainer className="service-card-container">
               <ImageWrapper className="image-wrapper">
                 <ImageContainer className="image-container">
-                  <img src={EventsImg} alt="Events" />
+                  <img src={EventsImg} loading="lazy" alt="Events" />
                 </ImageContainer>
               </ImageWrapper>
               <ServiceHeaderContainer>

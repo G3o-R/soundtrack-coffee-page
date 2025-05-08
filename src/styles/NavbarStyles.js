@@ -29,7 +29,6 @@ export const NavbarWrapper = styled.div`
     
     @media screen and (min-width: 769px) and (max-width: 1349px) {
       justify-content: left;
-      padding-left: 2.5rem;
     }
     @media screen and (min-width: 1350px) {
       .navbar-container {
@@ -43,8 +42,10 @@ export const NavbarWrapper = styled.div`
 export const NavbarContainer = styled.div`
   background-color: #fff;
   height: 5rem;
+  margin-left: 2.5rem;
   @media screen and (max-width: 768px) {
     height: 4rem;
+    margin-left: 0;
   }
 `;
 
