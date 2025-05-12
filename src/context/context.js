@@ -7,12 +7,12 @@ function ContextProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/spaces/4",{
+    fetch("http://127.0.0.1:3000/spaces/1",{
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-      },
+      }
     })
       .then((res) => {
         if (!res.ok) {

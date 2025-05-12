@@ -12,7 +12,7 @@ const spin = keyframes`
   }
 `;
 
-export const NavbarWrapper = styled.div`
+export const NavbarWrapper = styled.header`
   width: 100%;
   height: 100%;
   position: absolute;

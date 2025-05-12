@@ -7,15 +7,18 @@ import Events from "../pages/Events";
 import Booking from "../pages/Booking";
 import Navbar from "./Navbar";
 import { Context } from "../context/context";
-import React, { useContext } from "react";
-
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 
 export default function App() {
   const {isLoading, spaceData} = useContext(Context)
+  if (isLoading){
+    return (
+      <div className="App">
+        <h1>Loading...</h1>
+      </div>
+    )
+  }
 
-  console.log(isLoading)
-  console.log(spaceData)
   return (
     <div className="App">
       <BrowserRouter>

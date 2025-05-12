@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FooterSection = styled.section`
+export const FooterSection = styled.footer`
   background-color: #ffffff;
   display: flex;
   justify-content: center;
