@@ -1,19 +1,34 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const EventWrapper = styled.div`
-  max-height: 21.875rem;
   height: 100%;
   max-width: 53.125rem;
   width: 100%;
-`;
+  display: flex;
+  justify-content: center;
+  
+  @media screen and (min-width: 568px) {
+    max-height: 21.875rem;
+  }
+  `;
 
 export const EventContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 21.875rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid rgba(217, 128, 0);
+  
+  @media screen and (min-width: 568px) {
+    border-bottom: none;
+    justify-content: flex-start;
+    flex-direction: row;
+    max-width: 100%;
+    gap: 2.5rem;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -22,8 +37,6 @@ export const ImageWrapper = styled.div`
   aspect-ratio: 1/1;
   width: 100%;
   height: 100%;
-    /* margin-left: 10%; */
-
 `;
 
 export const VinylSVGWrapper = styled.div`
@@ -36,9 +49,8 @@ export const VinylSVGWrapper = styled.div`
     height: 100%;
     margin-left: -70%;
     transform: rotate(-22deg);
-    /* opacity: 0.1; */
     path {
-      fill: ${(props) => props.color || '#000'};
+      fill: ${(props) => props.color || "#000"};
     }
   }
 `;
@@ -61,9 +73,11 @@ export const TextContainer = styled.div`
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  position: relative;
-    z-index: 99;
+  gap: 0.25rem;
+  z-index: 99;
+  @media screen and (min-width: 568px) {
+    gap: 0.75rem;
+  }
 `;
 
 export const EventTitle = styled.h2`
@@ -72,4 +86,10 @@ export const EventTitle = styled.h2`
 
 export const EventDescription = styled.p`
   margin: 0;
+`;
+
+export const TimeNDate = styled.p`
+  margin: 0;
+  font-size: 0.875rem;
+  color: #000;
 `;

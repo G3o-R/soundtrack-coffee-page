@@ -122,8 +122,8 @@ export const MenuWrapper = styled.div`
   width: 100%;
   display: none;
   justify-content: center;
-  background-color: #cfcfcf;
-  border-radius: 0 0 1.5rem 1.5rem;
+  background: linear-gradient(180deg, #FEFEFE 0%, #D6D6D6 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   height: 1.5rem;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -132,14 +132,13 @@ export const MenuWrapper = styled.div`
 
 export const MenuDrop = styled(CiMenuBurger)`
   height: 80%;
-  color: #000000;
   font-size: 2rem;
   cursor: pointer;
   stroke-width: 1;
   transition: stroke-width 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &:hover {
-    color: #fff;
+    color: #adadad;
     stroke-width: 2;
   }
 
