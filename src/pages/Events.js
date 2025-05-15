@@ -11,6 +11,7 @@ import EventCard from "../components/EventCard";
 import Footer from "../components/Footer";
 
 export default function Events({ eventsArr }) {
+  console.log(eventsArr)
   const eventsToDisplay = eventsArr.map((event) => (
     <EventCard key={event.id} eventObj={event} />
   ));
