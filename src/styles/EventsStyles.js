@@ -9,6 +9,7 @@ export const ContentWrapper = styled.div`
   padding-top: 3.125rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 export const ContentContainer = styled.div`

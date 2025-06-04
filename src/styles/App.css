@@ -84,7 +84,7 @@ p{
 
 
 
-button, h2{
+button, h2, label{
   font-family: 'BioRhymeLight', sans-serif;
   font-size: 1.5rem;
   @media screen and (min-width: 960px) {
