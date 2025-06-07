@@ -111,6 +111,25 @@ export const TextContainer = styled.div`
   }
 `;
 
+export const ServicesWrapper = styled.div`
+
+`;
+
+export const ServicesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  /* justify-content: flex-end */
+  align-items: flex-end;
+  
+  span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+`;
+
 export const SubmitButton = styled.button`
   width: 100%;
   padding: 0.5rem;

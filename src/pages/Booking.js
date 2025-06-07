@@ -7,12 +7,18 @@ import {
   FlexContainer,
   FormGroup,
   InfoContainer,
+  ServicesContainer,
+  ServicesWrapper,
   StyledBookingPage,
   StyledHeader,
   SubmitButton,
   TextContainer,
   TextWrapper,
 } from "../styles/BookingStyles";
+import { ReactComponent as VinylOrange } from "../images-svgs/record-vinyl-orange.svg"
+import {  ReactComponent as VinylBrown } from "../images-svgs/record-vinyl-brown.svg"
+import {  ReactComponent as VinylBaige } from "../images-svgs/record-vinyl-baige.svg"
+
 import { useState } from "react";
 import Footer from "../components/Footer";
 
@@ -108,8 +114,22 @@ export default function Booking() {
                     Pick a date, choose your service, and share any notes—I'll
                     be in touch shortly to confirm the details.
                   </p>
+
                 </TextContainer>
               </TextWrapper>
+              <ServicesWrapper className="services-wrapper">
+                <ServicesContainer className="services-container">
+                  <span className="service">
+                    <p>Classes</p> <VinylOrange className="icon" />
+                  </span>
+                  <span className="service">
+                    <p>Catering</p> <VinylBrown className="icon" />
+                  </span>
+                  <span className="service">
+                    <p>Coffee</p> <VinylBaige className="icon" />
+                  </span>
+                </ServicesContainer>
+              </ServicesWrapper>
             </InfoContainer>
           </FlexContainer>
         </ContentContainer>
