@@ -15,9 +15,9 @@ import {
   TextContainer,
   TextWrapper,
 } from "../styles/BookingStyles";
-import { ReactComponent as VinylOrange } from "../images-svgs/record-vinyl-orange.svg"
-import {  ReactComponent as VinylBrown } from "../images-svgs/record-vinyl-brown.svg"
-import {  ReactComponent as VinylBaige } from "../images-svgs/record-vinyl-baige.svg"
+import { ReactComponent as VinylOrange } from "../images-svgs/record-vinyl-orange.svg";
+import { ReactComponent as VinylBrown } from "../images-svgs/record-vinyl-brown.svg";
+import { ReactComponent as VinylBaige } from "../images-svgs/record-vinyl-baige.svg";
 
 import { useState } from "react";
 import Footer from "../components/Footer";
@@ -114,7 +114,6 @@ export default function Booking() {
                     Pick a date, choose your service, and share any notes—I'll
                     be in touch shortly to confirm the details.
                   </p>
-
                 </TextContainer>
               </TextWrapper>
               <ServicesWrapper className="services-wrapper">

@@ -13,11 +13,17 @@ export const ContentWrapper = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  max-width: 78.75rem;
+  // background-color: blue;
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem;
+
+  @media screen and (min-width: 568px) {
+    max-width: 78.75rem;
+    width: 100%;
+    padding: 0 1.5rem;
+  }
 
   @media screen and (min-width: 960px) {
     padding: 0 2.5rem;
@@ -34,15 +40,25 @@ export const StyledHeader = styled.div`
 
 export const FlexContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: 568px) {
+    flex-direction: row;
+  }
 `;
 
 export const BookingFormWrapper = styled.div`
   border-left: 3px solid #2f2120;
-  padding: 1.5rem;
-  @media screen and (min-width: 425px) {
-    max-width: 22.25rem;
+  padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+  width: auto;
+  max-width: 22.25rem;
+
+  @media screen and (min-width: 568px) {
     width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 1.5rem;
   }
 `;
 
@@ -92,41 +108,77 @@ export const FormGroup = styled.div`
 
 export const InfoContainer = styled.div`
   width: 100%;
-  padding: 0rem 1.5rem;
+  padding: 0rem;
   /* margin-bottom: 1.25rem; */
-
+  
   @media screen and (min-width: 425px) {
     max-width: 22.25rem;
     width: 100%;
+    }
+    
+    @media screen and (min-width: 568px) {
+      padding: 1.5rem 1.5rem 1.5rem .5rem;
+    }
+    
+  @media screen and (min-width:768px){
+    padding: 1.5rem
   }
+}
 `;
 
 export const TextWrapper = styled.div``;
 
 export const TextContainer = styled.div`
-  text-align: right;
-
-  p{
+  text-align: left;
+  @media screen and (min-width: 568px) {
+    text-align: right;
+    margin: 0;
+    p {
+    }
+  }
+  p {
+    margin-bottom: 0;
     margin-top: 0;
   }
 `;
 
 export const ServicesWrapper = styled.div`
-
+  padding-bottom: 1.25rem;
 `;
 
 export const ServicesContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media screen and (min-width: 568px) {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  flex-direction: row;
+  gap: .75rem;
   /* justify-content: flex-end */
   align-items: flex-end;
-  
-  span{
+
+  span {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
-    gap: 1.5rem;
+    gap: .75rem;
+
+    svg{
+    width: 2.25rem;
+      height: 2.25rem;
+    }
+    
+    @media screen and (min-width: 568px) {
+      flex-direction: row;
+      gap: 1.5rem;
+      
+    svg {
+      width: 4.25rem;
+      height: 4.25rem;
+    }
   }
 `;
 
