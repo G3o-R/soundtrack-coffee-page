@@ -14,11 +14,13 @@ import LattePNG from "../images-svgs/Latte-Art.png";
 import BrewingPNG from "../images-svgs/Brewing.png";
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Classes() {
   const [expanded, setExpanded] = useState("");
   const lessonRef = useRef(null);
   const isntMobile = useMediaQuery({ query: "(min-width: 768px)" });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -123,7 +125,7 @@ export default function Classes() {
       </LessonOptionsWrapper>
       <BookingBtnWrapper className="booking-btn-wrapper">
         <BookingBtn
-          onClick={() => console.log("booking clicked")}
+          onClick={() => navigate("/booking")}
           className="booking-btn"
         >
           Book Now

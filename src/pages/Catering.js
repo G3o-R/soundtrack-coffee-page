@@ -9,8 +9,12 @@ import {
   BookingBtn,
 } from "../styles/CateringStyles";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Catering() {
+  const navigate = useNavigate();
+
   return (
     <StyledCateringPage>
       <PageInfoWrapper>
@@ -40,7 +44,7 @@ export default function Catering() {
       </PageInfoWrapper>
 
       <BookingBtnWrapper>
-        <BookingBtn>Book Now</BookingBtn>
+        <BookingBtn onClick={()=>navigate("/booking")}>Book Now</BookingBtn>
       </BookingBtnWrapper>
 
       <Footer />

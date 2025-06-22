@@ -10,6 +10,7 @@ import {
   BookingBtn,
 } from "../styles/HeroSectionStyles";
 import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router-dom";
 
 import { ReactComponent as VinylRecord } from "../images-svgs/record-vinyl.svg";
 
@@ -17,6 +18,7 @@ import STCLogov2 from "../images-svgs/new-logo-tab.png";
 
 export default function HeroSection() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const navigate = useNavigate();
   return (
     <StyledHeroSection className="hero-section">
       <HeroWrapper className="hero-wrapper">
@@ -34,7 +36,7 @@ export default function HeroSection() {
               </LogoWrapper>
               <BookingBtnWrapper className="booking-btn-wrapper">
                 <BookingBtn
-                  onClick={() => console.log("booking clicked")}
+                  onClick={() => navigate("/booking")}
                   className="booking-btn"
                   >
                   Book Now
@@ -53,7 +55,7 @@ export default function HeroSection() {
                   <h1 className="title">Soundtrack Coffee</h1>
                   <BookingBtnWrapper className="booking-btn-wrapper">
                     <BookingBtn
-                      onClick={() => console.log("booking clicked")}
+                      onClick={() => navigate("/booking")}
                       className="booking-btn"
                     >
                       Book Now

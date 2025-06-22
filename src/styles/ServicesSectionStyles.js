@@ -70,6 +70,7 @@ export const ImageContainer = styled.div`
 
 export const ServiceHeaderContainer = styled.div`
   text-align: left;
+  cursor: pointer;
   h2 {
     border-bottom: 1px solid #d98000;
     /* font-size: 1.5rem; */

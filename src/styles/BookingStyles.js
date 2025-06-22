@@ -17,7 +17,7 @@ export const ContentContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 
   @media screen and (min-width: 568px) {
     max-width: 78.75rem;

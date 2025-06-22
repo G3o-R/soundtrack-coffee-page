@@ -29,6 +29,7 @@ export default function App() {
           <Route path="/catering" element={<Catering />} />
           <Route path="/events" element={<Events eventsArr={spaceData.events}/>} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="secret-route" element={<h1>Secret Route</h1>} />
         </Routes>
       </BrowserRouter>
     </div>

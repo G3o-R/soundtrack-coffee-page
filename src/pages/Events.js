@@ -12,9 +12,13 @@ import Footer from "../components/Footer";
 
 export default function Events({ eventsArr }) {
   console.log(eventsArr)
-  const eventsToDisplay = eventsArr.map((event) => (
-    <EventCard key={event.id} eventObj={event} />
-  ));
+const eventsToDisplay = eventsArr && eventsArr.length > 0 ? (
+    eventsArr.map((event) => (
+      <EventCard key={event.id} eventObj={event} />
+    ))
+  ) : (
+    <div>Currently no events available.</div>
+  );
 
   return (
     <StyledEventsPage className="events-page">
@@ -25,7 +29,6 @@ export default function Events({ eventsArr }) {
           </PageTitlecontainer>
           <EventsWrapper className="events-wrapper">
             <EventsContainer className="events-container">
-              {eventsToDisplay}
               {eventsToDisplay}
             </EventsContainer>
           </EventsWrapper>
