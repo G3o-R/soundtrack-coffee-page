@@ -25,13 +25,14 @@ import Footer from "../components/Footer";
 export default function Booking() {
   const [formData, setFormData] = useState({
     requested_date: "",
-    contact_info: "",
-    type: "",
+    customer_name: "Geo",
+    contact_info: "Geo@gmail.com",
+    type: "Catering",
     additional_info:
       "I was really hoping to learn more about different latte art styles and designs is that a service you offer?",
   });
 
-  const { requested_date, contact_info, type, additional_info } = formData;
+  const { requested_date, customer_name, contact_info, type, additional_info } = formData;
 
   function handleChange(e) {
     let name = e.target.name;
@@ -41,13 +42,34 @@ export default function Booking() {
 
   function handleRequestSubmit(e) {
     e.preventDefault();
-    console.log(formData);
-    // dispatch(loginUser(loginData));
-    // setLoginData({
-    //   username: "",
-    //   password: "",
-    // });
-    // navigate("/");
+    
+        fetch("http://127.0.0.1:3000/contact_space/SoundtrackCoffee",{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            customer_name: customer_name,
+            customer_email: contact_info,
+            message: ` customer name: ${customer_name}, contact: ${contact_info}, Requested date: ${requested_date}, Type: ${type}, Additional info: ${additional_info}`,
+          })
+        })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+          }
+          return res.json();
+        })
+        .then((data) => {
+          console.log("Booking request submitted successfully:", data);
+          // setFormData({
+          //   requested_date: "",
+          //   contact_info: "",
+          //   type: "",
+          //   additional_info: "",
+          // });
+        })
   }
 
   return (
@@ -70,6 +92,15 @@ export default function Booking() {
                       name="requested_date"
                       value={requested_date}
                       type="date"
+                      onChange={(e) => handleChange(e)}
+                    />
+                  </FormGroup><FormGroup className="form-group">
+                    <label>Name</label>
+                    <input
+                      name="customer_name"
+                      value={customer_name}
+                      type="text"
+                      placeholder="John Doe"
                       onChange={(e) => handleChange(e)}
                     />
                   </FormGroup>

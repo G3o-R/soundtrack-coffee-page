@@ -11,14 +11,12 @@ import EventCard from "../components/EventCard";
 import Footer from "../components/Footer";
 
 export default function Events({ eventsArr }) {
-  console.log(eventsArr)
-const eventsToDisplay = eventsArr && eventsArr.length > 0 ? (
-    eventsArr.map((event) => (
-      <EventCard key={event.id} eventObj={event} />
-    ))
-  ) : (
-    <div>Currently no events available.</div>
-  );
+  const eventsToDisplay =
+    eventsArr && eventsArr.length > 0 ? (
+      eventsArr.map((event) => <EventCard key={event.id} eventObj={event} />)
+    ) : (
+      <div>Currently no events available.</div>
+    );
 
   return (
     <StyledEventsPage className="events-page">

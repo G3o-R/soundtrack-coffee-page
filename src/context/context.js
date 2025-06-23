@@ -31,6 +31,8 @@ function ContextProvider({ children }) {
       });
   }, []);
 
+  console.log(spaceData);
+
   return (
     <Context.Provider value={{ spaceData, isLoading }}>
       {children}
