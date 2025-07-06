@@ -4,15 +4,43 @@ const Context = React.createContext();
 
 function ContextProvider({ children }) {
   const [spaceData, setSpaceData] = useState({});
+  const [adminData, setAdminData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/spaces/1",{
+    fetch("http://127.0.0.1:3000/me-tenant", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-      }
+      },
+      credentials: "include",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          if (res.status === 401) {
+            return null;
+          }
+          return null;
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setAdminData(data);
+        }
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsLoading(false);
+      });
+
+    fetch("http://127.0.0.1:3000/spaces/1", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
     })
       .then((res) => {
         if (!res.ok) {
@@ -31,10 +59,8 @@ function ContextProvider({ children }) {
       });
   }, []);
 
-  console.log(spaceData);
-
   return (
-    <Context.Provider value={{ spaceData, isLoading }}>
+    <Context.Provider value={{ spaceData, adminData, isLoading }}>
       {children}
     </Context.Provider>
   );

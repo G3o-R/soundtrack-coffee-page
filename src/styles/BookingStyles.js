@@ -123,7 +123,7 @@ export const InfoContainer = styled.div`
   @media screen and (min-width:768px){
     padding: 1.5rem
   }
-}
+
 `;
 
 export const TextWrapper = styled.div``;
@@ -180,6 +180,7 @@ export const ServicesContainer = styled.div`
       height: 4.25rem;
     }
   }
+}
 `;
 
 export const SubmitButton = styled.button`
