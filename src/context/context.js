@@ -8,7 +8,7 @@ function ContextProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/me-tenant", {
+    fetch("http://localhost:3000/me-tenant", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -17,25 +17,13 @@ function ContextProvider({ children }) {
       credentials: "include",
     })
       .then((res) => {
-        if (!res.ok) {
-          if (res.status === 401) {
-            return null;
-          }
-          return null;
-        }
-        return res.json();
+        return res.json()
       })
-      .then((data) => {
-        if (data) {
-          setAdminData(data);
-        }
-        setIsLoading(false);
+      .then((adminData) => {
+        setAdminData(adminData);
       })
-      .catch(() => {
-        setIsLoading(false);
-      });
 
-    fetch("http://127.0.0.1:3000/spaces/1", {
+    fetch("http://localhost:3000/spaces/1", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +48,7 @@ function ContextProvider({ children }) {
   }, []);
 
   return (
-    <Context.Provider value={{ spaceData, adminData, isLoading }}>
+    <Context.Provider value={{ spaceData, adminData, setAdminData, isLoading }}>
       {children}
     </Context.Provider>
   );

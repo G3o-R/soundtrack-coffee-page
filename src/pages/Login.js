@@ -11,12 +11,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function Login() {
+export default function Login({setAdminData}) {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [loginData, setLoginData] = useState({
-    username: "",
-    password: "",
+    username: "exampleTenant1234",
+    password: "exampleTenantPassword",
   });
 
   const { username, password } = loginData;
@@ -29,8 +29,33 @@ export default function Login() {
 
   function handleLoginSubmit(e) {
     e.preventDefault();
-    console.log("logging in with data:", loginData);
-    // if login is successful, navigate to admin page
+    console.log("login clicked")
+    fetch("http://localhost:3000/tenant-login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(loginData),
+      credentials: "include",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+          navigate("/admin");
+          setAdminData(data);
+          setLoginData({
+            username: "",
+            password: "",
+          });
+      })
+      .catch((error) => {
+        // don't forget to add error handling
+    })
   }
 
   const showButton = (
@@ -50,7 +75,7 @@ export default function Login() {
     <StyledLoginPage className="login-page">
       <LoginWrapper className="login-wrapper">
         <LoginContainer className="login-container">
-          <LoginForm className="login-form">
+          <LoginForm className="login-form" onSubmit={handleLoginSubmit}>
           <h1>Admin</h1>
             <FormGroup className="form-group">
               {/* <label htmlFor="username">Username:</label> */}

@@ -12,9 +12,8 @@ import { Context } from "../context/context";
 import { useContext } from "react";
 
 export default function App() {
-  const { isLoading, spaceData, adminData } = useContext(Context);
-  const isAdmin = false; // This can be set based on your authentication logic
-  // const navigate = useNavigate();
+  const { isLoading, spaceData, adminData, setAdminData } = useContext(Context);
+  const isAdmin = adminData ? true : false;
 
   if (isLoading) {
     return (
@@ -41,7 +40,7 @@ export default function App() {
             path="/admin"
             element={isAdmin ? <Admin /> : <Navigate to="/admin-login" />}
           />
-          <Route path="/admin-login" element={<Login />} />
+          <Route path="/admin-login" element={<Login setAdminData={setAdminData} />} />
           {/* Add more routes as needed */}
         </Routes>
       </BrowserRouter>
